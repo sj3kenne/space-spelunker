@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	Rigidbody2D rb;
 	CircleCollider2D cc;
 	SpriteRenderer sr;
-	
+	AnimationController anim;
 
 
 	void Awake()
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 		// Get references to our components
 		rb = GetComponent<Rigidbody2D>();
 		cc = GetComponent<CircleCollider2D>();
+		anim = GetComponenet<AnimationController>();
 	}
 
     // Start is called before the first frame update
