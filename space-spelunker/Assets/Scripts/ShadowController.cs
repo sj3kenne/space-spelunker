@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShadowController : MonoBehaviour
 {
@@ -14,5 +12,15 @@ public class ShadowController : MonoBehaviour
     void FixedUpdate()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Get position of collided tile
+        var tilePos = collision.collider.transform.position;
+
+        // Fade colour of tile
+        
+
     }
 }
