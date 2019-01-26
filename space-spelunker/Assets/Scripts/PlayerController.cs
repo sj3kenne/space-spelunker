@@ -36,28 +36,28 @@ public class PlayerController : MonoBehaviour
 		// Turn off gravity
 		rb.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 
-		if (stutter >= Random.Range(0.0f, 1.0f)) // TODO: failing due to age or something?
-		{
+		//if (stutter >= Random.Range(0.0f, 1.0f)) // TODO: failing due to age or something?
+		//{
 			MoveHorizontal(Input.GetAxis("Horizontal")); //		
 			MoveVertical(Input.GetAxis("Vertical")); //
-		}
+		//}
 
     }
 
 	void MoveHorizontal(float input)
 	{
-		Vector2 moveVel = rb.velocity; //
-		moveVel.x = input * speed * Time.deltaTime; //
-													//
-		rb.velocity = moveVel;
+		Vector2 moveVel = rb.velocity; //Get our current rigidbody's velocity
+		moveVel.x = input * speed * Time.deltaTime; //Set the new x velocity to be the given input times our speed
+		//Note the multiply by Time.deltaTime to compensate for game clock//
+		rb.velocity = moveVel;//Update our rigidbody's velocity
 	}
 
 	void MoveVertical(float input)
 	{
-		Vector2 moveVel = rb.velocity; //
-		moveVel.x = input * speed * Time.deltaTime; //
-													//
-		rb.velocity = moveVel;
+		Vector2 moveVel = rb.velocity; //Get our current rigidbody's velocity
+		moveVel.y = input * speed * Time.deltaTime; //Set the new x velocity to be the given input times our speed
+		//Note the multiply by Time.deltaTime to compensate for game clock
+		rb.velocity = moveVel;//Update our rigidbody's velocity
 	}
 
 }
